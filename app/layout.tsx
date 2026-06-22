@@ -1,20 +1,31 @@
 import type { Metadata } from "next";
 
-import { MeshWalletProvider } from "@/app/components/providers/MeshWalletProvider";
+import { Providers } from "@/app/components/providers/Providers";
 
 import "./globals.css";
 
 export const metadata: Metadata = {
-    title: "Zero Cup — BTC Up or Down · Strike Finance",
+    title: "StrikeUp — Bitcoin Up or Down · Strike Finance",
     description:
-        "Trade Bitcoin Up or Down on a live 5-minute window, powered by Strike Finance perpetuals on Cardano.",
+        "Bet Bitcoin Up or Down in 5 minutes, powered by Strike Finance perpetuals on Cardano.",
+    openGraph: {
+        title: "StrikeUp — Bitcoin Up or Down",
+        description: "Bet Bitcoin Up or Down in 5 minutes, powered by Strike Finance.",
+        images: ["/cover.svg"],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "StrikeUp — Bitcoin Up or Down",
+        description: "Bet Bitcoin Up or Down in 5 minutes, powered by Strike Finance.",
+        images: ["/cover.svg"],
+    },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en">
             <body>
-                <MeshWalletProvider>{children}</MeshWalletProvider>
+                <Providers>{children}</Providers>
             </body>
         </html>
     );

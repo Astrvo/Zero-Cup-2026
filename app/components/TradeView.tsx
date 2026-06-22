@@ -101,9 +101,11 @@ export function TradeView({ symbol }: { symbol: string }) {
         <div className="mx-auto flex min-h-screen max-w-[1320px] flex-col px-4 pb-10">
             {/* Top bar */}
             <header className="flex items-center justify-between py-4">
-                <div className="flex items-center gap-2">
-                    <span className="text-lg font-bold tracking-tight text-ink">
-                        ZERO<span className="text-brand">CUP</span>
+                <div className="flex items-center gap-2.5">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/icon.svg" alt="StrikeUp" className="h-8 w-8 rounded-lg" />
+                    <span className="text-lg font-extrabold tracking-tight text-ink">
+                        Strike<span className="text-up">Up</span>
                     </span>
                     <span className="rounded bg-white/5 px-2 py-0.5 text-[10px] uppercase tracking-wide text-muted">
                         Predictions · Strike Finance

@@ -1,0 +1,15 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="StrikeUp logo mark">
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#14171f"/>
+      <stop offset="1" stop-color="#0a0b0e"/>
+    </linearGradient>
+    <linearGradient id="bolt" x1="256" y1="96" x2="256" y2="412" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3ce594"/>
+      <stop offset="0.55" stop-color="#1fb86a"/>
+      <stop offset="1" stop-color="#f7931a"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="496" height="496" rx="116" fill="url(#tile)" stroke="#2a2f3a" stroke-width="3"/>
+  <path d="M273 106 L273 222 L372 222 L240 405 L240 288 L140 288 Z" fill="url(#bolt)" stroke="#0a0b0e" stroke-width="6" stroke-linejoin="round"/>
+</svg>

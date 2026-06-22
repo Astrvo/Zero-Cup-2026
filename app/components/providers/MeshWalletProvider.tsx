@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { MeshProvider, useWallet, useWalletList } from "@meshsdk/react";
 
 import {
@@ -153,16 +153,12 @@ function WalletAutoReconnect() {
     return null;
 }
 
+// Mounted once, client-side only. The client-only boundary is enforced by the
+// `Providers` wrapper (next/dynamic with ssr:false), so MeshProvider never runs
+// during SSR/static prerender AND never remounts — a previous mounted-gate here
+// caused React error #310 (hook count mismatch) by swapping the subtree once the
+// gate flipped. Keep this component a single, stable MeshProvider mount.
 export function MeshWalletProvider({ children }: { children: React.ReactNode }) {
-    // MeshSDK's store calls hooks that are not safe to evaluate during static
-    // prerender / SSR, so mount the provider on the client only. Children render
-    // without the provider on the server (none of the prerendered routes use
-    // wallet hooks; the trade view is itself loaded client-side only).
-    const [mounted, setMounted] = useState(false);
-    useEffect(() => setMounted(true), []);
-
-    if (!mounted) return <>{children}</>;
-
     return (
         <MeshProvider>
             <WalletAutoReconnect />
