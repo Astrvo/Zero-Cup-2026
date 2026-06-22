@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --up: #2ad17e;
+    --down: #f6465d;
+    --base: #0a0b0e;
+    --panel: #111318;
+    --line: #23262f;
+    --ink: #e8eaed;
+    --muted: #8a8f9c;
+    --brand: #f7931a;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    background: var(--base);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+        Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #2a2e38;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #3a3f4b;
+}
+
+/* Numeric tabular figures for prices/sizes */
+.tnum {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum";
+}
